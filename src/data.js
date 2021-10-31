@@ -9,8 +9,8 @@ export function fetchRandom() {
         dispatch(getRandom())
         try {
             const response = await fetch('https://v2.jokeapi.dev/joke/Any')
-            const data = await response.json()
-            dispatch(getRandomSuccess(data))
+            const result = await response.json()
+            dispatch(getRandomSuccess(result))
         } catch (error) {
             dispatch(getRandomFailure())
         }
